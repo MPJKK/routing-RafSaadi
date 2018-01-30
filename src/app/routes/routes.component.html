@@ -4,7 +4,9 @@
 
     <ul>
         <li *ngFor="let reitti of pysakki.patterns">
-            {{ reitti.route.shortName }}: {{ reitti.route.longName }}
+            <h3>{{ reitti.route.shortName }}: {{ reitti.route.longName }}</h3>
+            <p [class]="reitti.directionId | routeDirection"> {{reitti.directionId | routeDirection}}</p>
+            <p class="longName">{{reitti.route.longName}}</p>
         </li>
     </ul>
 

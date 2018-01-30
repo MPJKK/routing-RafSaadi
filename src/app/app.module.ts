@@ -10,6 +10,7 @@ import {RoutesComponent} from './routes/routes.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DigitransitService} from './service/digitransit.service';
 import {FormsModule} from '@angular/forms';
+import { RouteDirectionPipe } from './pipes/route-direction.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {FormsModule} from '@angular/forms';
         AppComponent,
         TopBarComponent,
         SetupComponent,
-        RoutesComponent
+        RoutesComponent,
+        RouteDirectionPipe
     ],
     imports: [
         BrowserModule,
