@@ -1,11 +1,14 @@
-<h1>Pysäkit</h1>
-<ul>
-    <li *ngFor="let pysakki of reitit">
-        {{ pysakki.name }}
-        <ul>
-            <li *ngFor="let reitti of pysakki.patterns">
-                {{ reitti.route.shortName }}: {{ reitti.route.longName }}
-            </li>
-        </ul>
-    </li>
-</ul>
+<article *ngFor="let pysakki of reitit">
+
+    <h1>{{pysakki.name}}</h1>
+
+    <ul>
+        <li *ngFor="let reitti of pysakki.patterns">
+            {{ reitti.route.shortName }}: {{ reitti.route.longName }}
+        </li>
+    </ul>
+
+    <agm-map [latitude]="lat" [longitude]="lon" [zoom]="15" style="height: 300px">
+        <agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+    </agm-map>
+</article>
