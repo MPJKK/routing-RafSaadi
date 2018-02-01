@@ -10,7 +10,10 @@ import {RoutesComponent} from './routes/routes.component';
 import {HttpClientModule} from '@angular/common/http';
 import {DigitransitService} from './service/digitransit.service';
 import {FormsModule} from '@angular/forms';
-import { RouteDirectionPipe } from './pipes/route-direction.pipe';
+import {RouteDirectionPipe} from './pipes/route-direction.pipe';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {RouteColorPipe} from './pipes/route-color.pipe';
+import {MatTabsModule} from '@angular/material';
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import { RouteDirectionPipe } from './pipes/route-direction.pipe';
         TopBarComponent,
         SetupComponent,
         RoutesComponent,
-        RouteDirectionPipe
+        RouteDirectionPipe,
+        RouteColorPipe
     ],
     imports: [
         BrowserModule,
@@ -27,6 +31,8 @@ import { RouteDirectionPipe } from './pipes/route-direction.pipe';
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
+        FlexLayoutModule,
+        MatTabsModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyCQXKU0GUymCjek8hQ7qe_JlU0C5lIDH7I'
         })

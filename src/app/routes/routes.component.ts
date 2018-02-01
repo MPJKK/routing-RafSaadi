@@ -8,8 +8,6 @@ import {DigitransitService} from '../service/digitransit.service';
 })
 export class RoutesComponent implements OnInit {
     reitit: any;
-    lat: number;
-    lon: number;
 
     constructor(private digitransit: DigitransitService) {
     }
@@ -18,9 +16,8 @@ export class RoutesComponent implements OnInit {
     ngOnInit() {
         this.digitransit.getRoutes().subscribe((response) => {
             console.log(response.data['stops'][0].patterns);
-            this.reitit = response.data['stops'][0].patterns;
-            this.lat = response.data['stops'][0].lat;
-            this.lon = response.data['stops'][0].lon;
+            this.reitit = response.data['stops'];
+
         });
     }
 
